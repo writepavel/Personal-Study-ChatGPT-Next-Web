@@ -515,10 +515,10 @@ export function ImagePreviewer(props: {
 
           <div>
             <div className={styles["main-title"]}>
-              Let&apos;s chat, buddy 🐱‍👓
+              Personal Study 📖
             </div>
             <div className={styles["sub-title"]}>
-              github.com/Rewardable-Focus/FocusMeChat-ChatGPT-Next-Web
+              github.com/writepavel/Personal-Study-ChatGPT-Next-Web
             </div>
             <div className={styles["icons"]}>
               <ExportAvatar avatar={config.avatar} />
