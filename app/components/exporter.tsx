@@ -514,7 +514,9 @@ export function ImagePreviewer(props: {
           </div>
 
           <div>
-            <div className={styles["main-title"]}>Focus Me ChatGPT</div>
+            <div className={styles["main-title"]}>
+              Let&apos;s chat, buddy 🐱‍👓
+            </div>
             <div className={styles["sub-title"]}>
               github.com/Rewardable-Focus/FocusMeChat-ChatGPT-Next-Web
             </div>

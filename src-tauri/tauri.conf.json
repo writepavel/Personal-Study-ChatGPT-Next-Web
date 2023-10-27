@@ -8,7 +8,7 @@
     "withGlobalTauri": true
   },
   "package": {
-    "productName": "Focus Me ChatGPT",
+    "productName": "Let's chat, buddy 🐱‍👓",
     "version": "2.9.9"
   },
   "tauri": {
@@ -68,7 +68,7 @@
         "icons/icon.ico"
       ],
       "identifier": "com.focusmechat.chatgpt",
-      "longDescription": "Focus Me ChatGPT is a cross-platform ChatGPT client and collection of assistants that focused to help in user's goals, including Web/Win/Linux/OSX/PWA.",
+      "longDescription": "Let's chat, buddy 🐱‍👓 is a cross-platform ChatGPT client and collection of assistants that focused to help in user's goals, including Web/Win/Linux/OSX/PWA.",
       "macOS": {
         "entitlements": null,
         "exceptionDomain": "",
@@ -77,7 +77,7 @@
         "signingIdentity": null
       },
       "resources": [],
-      "shortDescription": "Focus Me ChatGPT",
+      "shortDescription": "Let's chat, buddy 🐱‍👓",
       "targets": "all",
       "windows": {
         "certificateThumbprint": null,
@@ -104,7 +104,7 @@
         "fullscreen": false,
         "height": 600,
         "resizable": true,
-        "title": "Focus Me ChatGPT",
+        "title": "Let's chat, buddy 🐱‍👓",
         "width": 960,
         "hiddenTitle": true,
         "titleBarStyle": "Overlay"
