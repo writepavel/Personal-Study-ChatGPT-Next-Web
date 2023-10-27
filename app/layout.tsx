@@ -6,9 +6,9 @@ import { getClientConfig } from "./config/client";
 import { type Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Let's chat, buddy 🐱‍👓",
+  title: "Personal Study 📖",
   description:
-    "Your personal virtual supportive environment that help to be focused on your tasks.",
+    "Your personal virtual environment that helps to do personal study.",
   viewport: {
     width: "device-width",
     initialScale: 1,
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     { media: "(prefers-color-scheme: dark)", color: "#151515" },
   ],
   appleWebApp: {
-    title: "Let's chat, buddy 🐱‍👓",
+    title: "Personal Study 📖",
     statusBarStyle: "default",
   },
 };

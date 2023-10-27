@@ -8,7 +8,7 @@
     "withGlobalTauri": true
   },
   "package": {
-    "productName": "Let's chat, buddy 🐱‍👓",
+    "productName": "Personal Study 📖",
     "version": "2.9.9"
   },
   "tauri": {
@@ -67,8 +67,8 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.focusmechat.chatgpt",
-      "longDescription": "Let's chat, buddy 🐱‍👓 is a cross-platform ChatGPT client and collection of assistants that focused to help in user's goals, including Web/Win/Linux/OSX/PWA.",
+      "identifier": "org.personalstudy.chatgpt",
+      "longDescription": "Personal Study is a cross-platform ChatGPT client and collection of assistants that focused to help in user's personal study, including Web/Win/Linux/OSX/PWA.",
       "macOS": {
         "entitlements": null,
         "exceptionDomain": "",
@@ -77,7 +77,7 @@
         "signingIdentity": null
       },
       "resources": [],
-      "shortDescription": "Let's chat, buddy 🐱‍👓",
+      "shortDescription": "Personal Study 📖",
       "targets": "all",
       "windows": {
         "certificateThumbprint": null,
@@ -91,7 +91,7 @@
     "updater": {
       "active": true,
       "endpoints": [
-        "https://github.com/Rewardable-Focus/FocusMeChat-ChatGPT-Next-Web/releases/latest/download/latest.json"
+        "https://github.com/writepavel/Personal-Study-ChatGPT-Next-Web/releases/latest/download/latest.json"
       ],
       "dialog": false,
       "windows": {
@@ -104,7 +104,7 @@
         "fullscreen": false,
         "height": 600,
         "resizable": true,
-        "title": "Let's chat, buddy 🐱‍👓",
+        "title": "Personal Study 📖",
         "width": 960,
         "hiddenTitle": true,
         "titleBarStyle": "Overlay"
