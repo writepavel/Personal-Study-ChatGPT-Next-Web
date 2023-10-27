@@ -6,7 +6,7 @@ import { getClientConfig } from "./config/client";
 import { type Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Focus Me ChatGPT",
+  title: "Let's chat, buddy 🐱‍👓",
   description:
     "Your personal virtual supportive environment that help to be focused on your tasks.",
   viewport: {
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     { media: "(prefers-color-scheme: dark)", color: "#151515" },
   ],
   appleWebApp: {
-    title: "Focus Me ChatGPT",
+    title: "Let's chat, buddy 🐱‍👓",
     statusBarStyle: "default",
   },
 };
