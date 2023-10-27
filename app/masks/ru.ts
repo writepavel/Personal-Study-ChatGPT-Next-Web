@@ -2,7 +2,6 @@ import { BuiltinMask } from "./typing";
 
 export const RU_MASKS: BuiltinMask[] = [
   {
-    id: "_D4n5B6LUvZOZyOeo22MN",
     avatar: "1f411",
     name: "✍️ Завершение дня",
     context: [
@@ -34,7 +33,6 @@ export const RU_MASKS: BuiltinMask[] = [
     hideContext: true,
   },
   {
-    id: "SqE_PM65XKDaWH-Bwx029",
     avatar: "1f411",
     name: "📖 Чтение Библии",
     context: [
@@ -66,7 +64,6 @@ export const RU_MASKS: BuiltinMask[] = [
     hideContext: true,
   },
   {
-    id: "eNApMN_r27Mbb0UayLBhs",
     avatar: "1f411",
     name: "🟦 Статья или видео",
     context: [
@@ -98,7 +95,6 @@ export const RU_MASKS: BuiltinMask[] = [
     hideContext: true,
   },
   {
-    id: "lx2Z8im_TIg2XvHEFiSWf",
     avatar: "1f411",
     name: "☕️ Доброе утро!",
     context: [
