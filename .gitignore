@@ -46,3 +46,4 @@ dev
 *.key.pub
 \.idea
 \.wiseGPT\
+*.iml
