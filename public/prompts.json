@@ -1,5 +1,50 @@
 {
   "cn": [],
-  "en": []
+  "en": [    
+    [
+      "😴 End of day",
+      "/evening"
+    ],
+    [
+      "📚 Article or Video",
+      "/our_library"
+    ],
+    [
+      "📖 Bible Reading",
+      "/Bible"
+    ],
+    [
+      "☕ Good Morning",
+      "/morning"
+    ],
+    [
+      "📊 Statistics",
+      "/stat"
+    ],
+    [
+      "⏹ Step Done",
+      "/step_done"
+    ],
+    [
+      "📝 Add Note",
+      "/note"
+    ],
+    [
+      "🎈 Keep focus",
+      "/stay_focused"
+    ],
+    [
+      "🎯 Plan Result",
+      "/step_plan"
+    ],
+    [
+      "🎉 I've done",
+      "/achievement"
+    ],
+    [
+      "👟 New Step",
+      "/new_step"
+    ]
+  ] 
 }
 

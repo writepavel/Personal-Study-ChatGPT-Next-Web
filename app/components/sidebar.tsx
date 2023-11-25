@@ -148,7 +148,8 @@ export function SideBar(props: { className?: string }) {
           Personal Study 📖
         </div>
         <div className={styles["sidebar-sub-title"]}>
-          With the virtual characters support 🐨 your personal study becomes more fruitful 🍊
+          With the virtual characters support 🐨 your personal study becomes
+          more fruitful 🍊
         </div>
         <div className={styles["sidebar-logo"] + " no-dark"}>
           <ChatGptIcon />
@@ -162,20 +163,20 @@ export function SideBar(props: { className?: string }) {
           className={styles["sidebar-bar-button"]}
           onClick={() => {
             if (config.dontShowMaskSplashScreen !== true) {
-              navigate(Path.NewChat, { state: { fromHome: true } });
+              navigate(Path.Masks, { state: { fromHome: true } });
             } else {
               navigate(Path.Masks, { state: { fromHome: true } });
             }
           }}
           shadow
         />
-        <IconButton
+        {/* <IconButton
           icon={<PluginIcon />}
           text={shouldNarrow ? undefined : Locale.Plugin.Name}
           className={styles["sidebar-bar-button"]}
           onClick={() => showToast(Locale.WIP)}
           shadow
-        />
+        /> */}
       </div>
 
       <div
@@ -221,7 +222,7 @@ export function SideBar(props: { className?: string }) {
                 chatStore.newSession();
                 navigate(Path.Chat);
               } else {
-                navigate(Path.NewChat);
+                navigate(Path.Masks);
               }
             }}
             shadow

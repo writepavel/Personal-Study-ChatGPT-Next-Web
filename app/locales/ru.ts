@@ -195,10 +195,10 @@ const ru: PartialLocaleType = {
     Sysmessage: "Вы - ассистент, который",
   },
   Mask: {
-    Name: "Маска",
+    Name: "Новый Фокус",
     Page: {
-      Title: "Шаблон подсказки",
-      SubTitle: (count: number) => `${count} шаблонов подсказок`,
+      Title: "Шаблон фокуса",
+      SubTitle: (count: number) => `${count} шаблонов фокуса`,
       Search: "Поиск шаблонов",
       Create: "Создать",
     },
@@ -226,8 +226,8 @@ const ru: PartialLocaleType = {
   NewChat: {
     Return: "Вернуться",
     Skip: "Пропустить",
-    Title: "Выберите маску",
-    SubTitle: "Общайтесь с душой за маской",
+    Title: "Создайте область фокуса",
+    SubTitle: "Двигайтесь к целям с поддержкой виртуальных персонажей",
     More: "Найти еще",
     NotShow: "Не показывать снова",
     ConfirmNoShow:

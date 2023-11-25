@@ -192,10 +192,10 @@ const cs: PartialLocaleType = {
     Sysmessage: "Jste asistent, který",
   },
   Mask: {
-    Name: "Maska",
+    Name: "Nové Zaměření",
     Page: {
-      Title: "Šablona pokynu",
-      SubTitle: (count: number) => `${count} šablon pokynů`,
+      Title: "Šablona zaměření",
+      SubTitle: (count: number) => `${count} šablon zaměření`,
       Search: "Hledat v šablonách",
       Create: "Vytvořit",
     },
@@ -221,8 +221,8 @@ const cs: PartialLocaleType = {
   NewChat: {
     Return: "Zpět",
     Skip: "Přeskočit",
-    Title: "Vyberte Masku",
-    SubTitle: "Chatovat s duší za Maskou",
+    Title: "Výběr oblasti zaměření",
+    SubTitle: "Pohybujte se za svými cíli s podporou virtuálních postav",
     More: "Najít více",
     NotShow: "Nezobrazovat znovu",
     ConfirmNoShow: "Potvrdit zakázání？Můžete jej povolit později v nastavení.",

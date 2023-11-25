@@ -348,10 +348,10 @@ const en: LocaleType = {
     Sysmessage: "You are an assistant that",
   },
   Mask: {
-    Name: "Mask",
+    Name: "New Focus",
     Page: {
-      Title: "Prompt Template",
-      SubTitle: (count: number) => `${count} prompt templates`,
+      Title: "Focus Template",
+      SubTitle: (count: number) => `${count} focus templates`,
       Search: "Search Templates",
       Create: "Create",
     },
@@ -391,8 +391,8 @@ const en: LocaleType = {
   NewChat: {
     Return: "Return",
     Skip: "Just Start",
-    Title: "Pick a Mask",
-    SubTitle: "Chat with the Soul behind the Mask",
+    Title: "Create New Focus Area",
+    SubTitle: "Reach goals with virtual assistants support",
     More: "Find More",
     NotShow: "Never Show Again",
     ConfirmNoShow: "Confirm to disable？You can enable it in settings later.",

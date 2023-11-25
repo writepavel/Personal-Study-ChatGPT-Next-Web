@@ -1,5 +1,5 @@
 export const OWNER = "writepavel";
-export const REPO = "Personal-Study-ChatGPT-Next-Web-Web";
+export const REPO = "Personal-Study-ChatGPT-Next-Web";
 export const REPO_URL = `https://github.com/${OWNER}/${REPO}`;
 export const ISSUE_URL = `https://github.com/${OWNER}/${REPO}/issues`;
 export const UPDATE_URL = `${REPO_URL}#keep-updated`;
@@ -69,57 +69,77 @@ export const OpenaiPath = {
 export const DEFAULT_INPUT_TEMPLATE = `{{input}}`; // input / time / model / lang
 export const DEFAULT_SYSTEM_TEMPLATE = `
 You are ChatGPT, a large language model trained by OpenAI.
-Knowledge cutoff: 2021-09
+Knowledge cutoff: 2023-04
 Current model: {{model}}
 Current time: {{time}}`;
 
-export const SUMMARIZE_MODEL = "gpt-3.5-turbo";
+export const SUMMARIZE_MODEL = "gpt-4-1106-preview";
 
 export const DEFAULT_MODELS = [
+  {
+    name: "gpt-4-1106-preview",
+    available: true,
+  },
   {
     name: "gpt-4",
     available: true,
   },
-  {
-    name: "gpt-4-0314",
-    available: true,
-  },
-  {
-    name: "gpt-4-0613",
-    available: true,
-  },
-  {
-    name: "gpt-4-32k",
-    available: true,
-  },
-  {
-    name: "gpt-4-32k-0314",
-    available: true,
-  },
-  {
-    name: "gpt-4-32k-0613",
-    available: true,
-  },
+  // {
+  //   name: "gpt-4-vision-preview",
+  //   available: true,
+  // },
+  // {
+  //   name: "gpt-4-0314",
+  //   available: true,
+  // },
+  // {
+  //   name: "gpt-4-0613",
+  //   available: true,
+  // },
+  // {
+  //   name: "gpt-4-32k",
+  //   available: true,
+  // },
+  // {
+  //   name: "gpt-4-32k-0314",
+  //   available: true,
+  // },
+  // {
+  //   name: "gpt-4-32k-0613",
+  //   available: true,
+  // },
   {
     name: "gpt-3.5-turbo",
     available: true,
   },
   {
-    name: "gpt-3.5-turbo-0301",
+    name: "gpt-3.5-turbo-1106",
     available: true,
   },
-  {
-    name: "gpt-3.5-turbo-0613",
-    available: true,
-  },
-  {
-    name: "gpt-3.5-turbo-16k",
-    available: true,
-  },
-  {
-    name: "gpt-3.5-turbo-16k-0613",
-    available: true,
-  },
+  // {
+  //   name: "dall-e-3",
+  //   available: false,
+  // },
+  // {
+  //   name: "tts-1",
+  //   available: false,
+  // },
+  // {
+  //   name: "tts-1-hd",
+  //   available: false,
+  // },
+  // {
+  //   name: "gpt-3.5-turbo-0613",
+  //   available: true,
+  // },
+  // {
+  //   name: "gpt-3.5-turbo-16k",
+  //   available: true,
+  // },
+  // {
+  //   name: "gpt-3.5-turbo-16k-0613",
+  //   available: true,
+  // },
 ] as const;
 
 export const CHAT_PAGE_SIZE = 15;

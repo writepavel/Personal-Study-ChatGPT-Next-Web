@@ -54,8 +54,8 @@ if ! command -v node >/dev/null || ! command -v git >/dev/null || ! command -v y
 fi
 
 # Clone the repository and install dependencies
-git clone https://github.com/Rewardable-Focus/FocusMeChat-ChatGPT-Next-Web
-cd FocusMeChat-ChatGPT-Next-Web
+git clone https://github.com/writepavel/Personal-Study-ChatGPT-Next-Web
+cd Personal-Study-ChatGPT-Next-Web
 yarn install
 
 # Prompt user for environment variables

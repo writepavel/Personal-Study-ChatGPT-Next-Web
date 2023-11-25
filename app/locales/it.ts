@@ -195,7 +195,7 @@ const it: PartialLocaleType = {
     Sysmessage: "Sei un assistente che",
   },
   Mask: {
-    Name: "Mask",
+    Name: "New Focus",
     Page: {
       Title: "Prompt Template",
       SubTitle: (count: number) => `${count} prompt templates`,
@@ -224,8 +224,8 @@ const it: PartialLocaleType = {
   NewChat: {
     Return: "Return",
     Skip: "Skip",
-    Title: "Pick a Mask",
-    SubTitle: "Chat with the Soul behind the Mask",
+    Title: "Create a focus area",
+    SubTitle: "Reach your goals with virtual assistants support",
     More: "Find More",
     NotShow: "Not Show Again",
     ConfirmNoShow: "Confirm to disable？You can enable it in settings later.",
