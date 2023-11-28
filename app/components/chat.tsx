@@ -6,6 +6,7 @@ import React, {
   useMemo,
   useCallback,
   Fragment,
+  ReactNode,
 } from "react";
 
 import SendWhiteIcon from "../icons/send-white.svg";
@@ -404,10 +405,58 @@ function useScrollToBottom() {
   };
 }
 
-export function ChatActions(props: {
+interface Command {
+  command: string;
+  text: string;
+  icon: JSX.Element;
+}
+
+interface ChatActionsProps {
+  children?: ReactNode;
   showPromptModal: () => void;
   scrollToBottom: () => void;
   showPromptHints: () => void;
+  sendAICommand: (aiCommand: string) => void;
+  hitBottom: boolean;
+  // other props
+}
+
+export function useAICommands() {
+  const [commands, setCommands] = useState<Command[]>([]);
+
+  const updateAICommands = useCallback((newCommands: Command[]) => {
+    setCommands(newCommands);
+  }, []);
+
+  return {
+    commands,
+    updateAICommands,
+  };
+}
+
+function AICommands({
+  sendAICommand,
+  commands,
+}: {
+  sendAICommand: (command: string) => void;
+  commands: Command[];
+}) {
+  return commands.map((cmd) => (
+    <ChatAction
+      key={cmd.text}
+      onClick={() => sendAICommand(cmd.command)}
+      text={cmd.text}
+      icon={cmd.icon}
+    />
+  ));
+}
+
+export function ChatActions(props: {
+  children?: ReactNode;
+  showPromptModal: () => void;
+  scrollToBottom: () => void;
+  showPromptHints: () => void;
+  sendAICommand: (aiCommand: string) => void;
   hitBottom: boolean;
 }) {
   const config = useAppConfig();
@@ -480,11 +529,13 @@ export function ChatActions(props: {
         }
       />
 
-      <ChatAction
+      {props.children}
+
+      {/* <ChatAction
         onClick={props.showPromptHints}
         text={Locale.Chat.InputActions.Prompt}
         icon={<PromptIcon />}
-      />
+      /> */}
 
       {/* <ChatAction
         onClick={() => {
@@ -617,6 +668,12 @@ function _Chat() {
   const [hitBottom, setHitBottom] = useState(true);
   const isMobileScreen = useMobileScreen();
   const navigate = useNavigate();
+  const doSubmit = useSubmit();
+  const sendAICmd = useCallback(
+    (cmd: string) => doSubmit(cmd + " " + userInput),
+    [doSubmit, userInput],
+  );
+  const { commands, updateAICommands } = useAICommands();
 
   // prompt hints
   const promptStore = usePromptStore();
@@ -651,6 +708,65 @@ function _Chat() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(measure, [userInput]);
 
+  useEffect(() => {
+    const defaultAIcommands: Command[] = [
+      { command: "/new_step", text: "New Step", icon: <span>👟</span> },
+      {
+        command: "/previous_question",
+        text: "Previous Question",
+        icon: <span>⏪</span>,
+      },
+      { command: "/morning", text: "Good Morning", icon: <span>☕</span> },
+      { command: "/Bible", text: "Bible Reading", icon: <span>📖</span> },
+      {
+        command: "/our_library",
+        text: "Article or Video",
+        icon: <span>📚</span>,
+      },
+      { command: "/evening", text: "End of day", icon: <span>✍</span> },
+      { command: "/achievement", text: "I've done!", icon: <span>🎉</span> },
+      { command: "/step_plan", text: "Result Plan", icon: <span>🎯</span> },
+      { command: "/stay_focused", text: "Keep Focus", icon: <span>🎈</span> },
+      { command: "/note", text: "Add Note", icon: <span>📝</span> },
+      { command: "/step_done", text: "Step Done", icon: <span>⏹</span> },
+      {
+        command:
+          "/refine_focus. Remind user his / her [user-focus] and the reason of it: [user-focus-reason]. Kindly ask if he / her wants to update it and if yes then ask questions to fill new values for [user-focus] and the reason of it: [user-focus-reason] ",
+        text: "Refine Focus",
+        icon: <span>🤔</span>,
+      },
+      { command: "/stat", text: "Statistics", icon: <span>📊</span> },
+      {
+        command: "/next_question",
+        text: "Next Question",
+        icon: <span>⏩</span>,
+      },
+    ];
+    updateAICommands(defaultAIcommands);
+  }, [updateAICommands]);
+
+  function useSubmit() {
+    const doSubmit = (userInput: string) => {
+      if (userInput.trim() === "") return;
+      const matchCommand = chatCommands.match(userInput);
+      if (matchCommand.matched) {
+        setUserInput("");
+        setPromptHints([]);
+        matchCommand.invoke();
+        return;
+      }
+      setIsLoading(true);
+      chatStore.onUserInput(userInput).then(() => setIsLoading(false));
+      localStorage.setItem(LAST_INPUT_KEY, userInput);
+      setUserInput("");
+      setPromptHints([]);
+      if (!isMobileScreen) inputRef.current?.focus();
+      setAutoScroll(true);
+    };
+
+    return doSubmit;
+  }
+
   // chat commands shortcuts
   const chatCommands = useChatCommand({
     new: () => chatStore.newSession(),
@@ -682,24 +798,6 @@ function _Chat() {
         onSearch(searchText);
       }
     }
-  };
-
-  const doSubmit = (userInput: string) => {
-    if (userInput.trim() === "") return;
-    const matchCommand = chatCommands.match(userInput);
-    if (matchCommand.matched) {
-      setUserInput("");
-      setPromptHints([]);
-      matchCommand.invoke();
-      return;
-    }
-    setIsLoading(true);
-    chatStore.onUserInput(userInput).then(() => setIsLoading(false));
-    localStorage.setItem(LAST_INPUT_KEY, userInput);
-    setUserInput("");
-    setPromptHints([]);
-    if (!isMobileScreen) inputRef.current?.focus();
-    setAutoScroll(true);
   };
 
   const onPromptSelect = (prompt: RenderPompt) => {
@@ -1247,6 +1345,7 @@ function _Chat() {
         <PromptHints prompts={promptHints} onPromptSelect={onPromptSelect} />
 
         <ChatActions
+          sendAICommand={sendAICmd}
           showPromptModal={() => setShowPromptModal(true)}
           scrollToBottom={scrollToBottom}
           hitBottom={hitBottom}
@@ -1261,7 +1360,9 @@ function _Chat() {
             setUserInput("/");
             onSearch("");
           }}
-        />
+        >
+          <AICommands commands={commands} sendAICommand={sendAICmd} />
+        </ChatActions>
         <div className={styles["chat-input-panel-inner"]}>
           <textarea
             ref={inputRef}
